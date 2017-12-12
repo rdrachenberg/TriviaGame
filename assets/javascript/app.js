@@ -18,6 +18,14 @@ for (i = 0; i < questions.length; i++) {
     });
 }
 
+// correct answer array
+var answersCorrect = ["District of Columbia", 
+"Flint", 
+"LAX", 
+"Tax Evasion", 
+"San Diego" 
+]
+
 var userChoices = ["Washington State",
 "District of Columbia", "Philadelphia", "Boston", "Detroit",
 "Flint", "Boulder", "Pittsburg", "LAI", "LXA", "LAX", "ILA",
@@ -50,58 +58,47 @@ for (i = 0; i < userChoices.length; i++) {
 	});
 }
 
-// correct answer array
-var answersCorrect = ["District of Columbia", 
-"Flint", 
-"LAX", 
-"Tax Evasion", 
-"San Diego" 
-]
+var wins = []
+var loss = []
 
-var count=60;
-//1000 will  run it every 1 second
-var counter=setInterval(timer, 1000); 
 
-	function timer() {
-  	count=count-1;
-  	if (count <= 0)
-  	{
-    clearInterval(counter);
-     //counter ended, do something here
-     return("Game Over");
-     console
-  }
+// for (i = 0; i < userChoices.length; i++) {
+// 	if counter <= 0; {
 
-  //Do code for showing the number of seconds here
-  function timer()
-{
-  count=count-1;
-  if (count <= 0)
-  {
-     clearInterval(counter);
-     return;
-  }
+// 		{ else {
+// 			$(".mainContainer").html("THIS IS WHERE THE WINS/LOSSES GO");
+// 			console.log(mainContainer)
+// 			}
+// 		} 
+// 	} 
+// }
+ 
 
- document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
-}
-} 
+// On click Timer Start and target 1st row
+	$("#startClock").click( function(){
+	   var counter = 60;
+	   setInterval(function() {
+	     counter--;
+	      if (counter >= 0) {
+	         span = document.getElementById("countDownTimer");
+	         span.innerHTML = counter;
+	      }
+	      if (counter === 0) {
+	         alert("Out of Time, Click OK to check your score");
+	         clearInterval(counter);
+	       }
+	     }, 1000);
+	});
 
- $(document).ready(function(){
-         function getdate(){
-                var today = new Date();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-             if(s<10){
-                 s = "0"+s;
-             }
-
-            $("h1").text(h+" : "+m+" : "+s);
-             setTimeout(function(){getdate()}, 500);
-            }
-
-        $("button").click(getdate);
-    });
+// time left bar 
+	$("#startClock").click( function(){
+	var timeleft = 60;
+	var timeLeftTimerBar = setInterval(function(){
+	  document.getElementById("progressBar").value = 60 - --timeleft;
+	  if(timeleft <= 0)
+	    clearInterval(timeLeftTimerBar);
+	},1000);
+	});
 
 });
 
