@@ -1,1 +1,125 @@
-style.css
+body {
+  font-weight: 200;
+  letter-spacing: 1px;
+  background-image: url("../images/pop2.jpg");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.jumbotron-fluid {
+	background-color: DarkSlateGray;
+	text-align: center;
+	max-height: 200px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 5px;
+}
+
+.display-3 {
+	color: Azure;
+}
+
+.lead {
+	color: Azure;
+}
+
+#header {
+	text-align: center;
+	object-position: center;
+	width: 100%;
+	outline-width: 2px;
+	outline-color: black;
+}
+#startGameBtn{
+	border-style: solid;
+	border-color: MediumTurquoise;
+	color: red;
+	opacity: .9;
+	background-color: MediumTurquoise;
+	border-width: 10px;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	font-size: 40px;
+	
+}
+
+#row2 {
+	outline-color: black;
+	outline-width: 20px;
+}
+
+#gameDisplay {
+	border-style: solid;
+	border-color: black;
+	color: Azure;
+	background-color: black;
+	border-width: 5px;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	font-size: 30px;
+	margin-top: 2px;
+}
+
+#gameDisplay2 {
+	border-style: solid;
+	border-color: black;
+	color: Azure;
+	background-color: black;
+	border-width: 5px;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	font-size: 30px;
+	margin-top: 2px;
+}
+
+#gameDisplay3 {
+	border-style: solid;
+	border-color: black;
+	color: Azure;
+	background-color: black;
+	border-width: 5px;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	font-size: 30px;
+	margin-top: 2px;
+}
+
+#gameDisplay4 {
+	border-style: solid;
+	border-color: black;
+	color: Azure;
+	background-color: black;
+	border-width: 5px;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	font-size: 30px;
+	margin-top: 2px;
+}
+
+#gameDisplay5 {
+	border-style: solid;
+	border-color: black;
+	color: Azure;
+	background-color: black;
+	border-width: 5px;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	font-size: 30px;
+	margin-top: 2px;
+}
+
+label {
+	color: Azure;
+	font-size: 15px;
+	padding-left: 3px;
+	padding-right: 10px;
+}
