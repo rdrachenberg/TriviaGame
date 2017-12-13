@@ -18,7 +18,7 @@ for (i = 0; i < questions.length; i++) {
     });
 }
 
-// correct answer array
+// correct answers
 var answersCorrect = ["District of Columbia", 
 "Flint", 
 "LAX", 
@@ -26,6 +26,7 @@ var answersCorrect = ["District of Columbia",
 "San Diego" 
 ]
 
+// user choices
 var userChoices = ["Washington State",
 "District of Columbia", "Philadelphia", "Boston", "Detroit",
 "Flint", "Boulder", "Pittsburg", "LAI", "LXA", "LAX", "ILA",
@@ -33,8 +34,14 @@ var userChoices = ["Washington State",
 "El Paso", "San Diego", "Dallas", "Austin"
 ]
 
+// function winLose(){
+// 	if (counter === 0)
+
+// }
+// var userGuess 
+
 for (i = 0; i < userChoices.length; i++) {
-	$(document).ready(function() {
+	
 		$("#choice1").html(userChoices[0]);
 		$("#choice2").html(userChoices[1]);
 		$("#choice3").html(userChoices[2]);
@@ -54,51 +61,60 @@ for (i = 0; i < userChoices.length; i++) {
 		$("#choice17").html(userChoices[16]);
 		$("#choice18").html(userChoices[17]);
 		$("#choice19").html(userChoices[18]);
-		$("#choice20").html(userChoices[19]);
-	});
+		$("#choice20").html(userChoices[19]);	
 }
 
-var wins = []
-var loss = []
-
-
-// for (i = 0; i < userChoices.length; i++) {
-// 	if counter <= 0; {
-
-// 		{ else {
-// 			$(".mainContainer").html("THIS IS WHERE THE WINS/LOSSES GO");
-// 			console.log(mainContainer)
-// 			}
-// 		} 
-// 	} 
-// }
- 
-
-// On click Timer Start and target 1st row
+// On click Timer Start and target 1st jubotron row
 	$("#startClock").click( function(){
-	   var counter = 60;
+	   var counter = 10;
 	   setInterval(function() {
 	     counter--;
 	      if (counter >= 0) {
 	         span = document.getElementById("countDownTimer");
 	         span.innerHTML = counter;
+	         $("row7").show();
 	      }
 	      if (counter === 0) {
 	         alert("Out of Time, Click OK to check your score");
 	         clearInterval(counter);
+	         // hide qusetions
+			$(function() {
+			$(".form").hide(15000).delay(15000);
+			$("row7").show();
+			});
 	       }
 	     }, 1000);
+	   
 	});
 
-// time left bar 
+// time left bar and target the bottom of jumbotron
 	$("#startClock").click( function(){
-	var timeleft = 60;
-	var timeLeftTimerBar = setInterval(function(){
-	  document.getElementById("progressBar").value = 60 - --timeleft;
-	  if(timeleft <= 0)
-	    clearInterval(timeLeftTimerBar);
-	},1000);
+		var timeleft = 10;
+		var timeLeftTimerBar = setInterval(function(){
+		  document.getElementById("progressBar").value = 10 - --timeleft;
+		  if(timeleft <= 0)
+		    clearInterval(timeLeftTimerBar);
+		},1000);
 	});
+
+var wins = []
+var loss = []
+
+
+// Need to compare user input to right answer array
+
+$("form").on("submit", function(event) {
+	event.preventDefault();
+	var $answer = $("form");
+	var answer = $answersCorrect.val();
+	console.log(answer);
+	if (answer === answersCorrect.length ++) {
+		$("#result").text("Wowee! You got it! WOOO!");
+	} else {
+		$("#result").text("Try again!");
+	}
+});
+
 
 });
 

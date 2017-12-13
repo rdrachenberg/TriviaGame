@@ -143,3 +143,19 @@ label {
 	padding-left: 3px;
 	padding-right: 10px;
 }
+
+#gameResults {
+	border-style: solid;
+	border-color: black;
+	color: Azure;
+	background-color: black;
+	border-width: 5px;
+	text-align: center;
+	height: 250px;
+	width: 100%;
+	font-size: 30px;
+	margin-top: 2px;
+	opacity: .87;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
