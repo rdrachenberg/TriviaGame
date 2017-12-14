@@ -1,5 +1,6 @@
 // Load document before runing javascript 
 $(document).ready(function(){
+
 // questions array
 	var questions = ["What is the capitol of the US?", 
 	"What city was General Motors founded in?", 
@@ -46,8 +47,8 @@ $(document).ready(function(){
 			$("#choice7").html(userChoices[6]);
 			$("#choice8").html(userChoices[7]);
 			$("#choice9").html(userChoices[8]);
-			$("#choice10").html(userChoices[9]);
-			$("#choice11").html(userChoices[10]);
+			$("#choice60").html(userChoices[9]);
+			$("#choice11").html(userChoices[60]);
 			$("#choice12").html(userChoices[11]);
 			$("#choice13").html(userChoices[12]);
 			$("#choice14").html(userChoices[13]);
@@ -61,7 +62,7 @@ $(document).ready(function(){
 
 // On click Timer Start and target 1st jubotron row
 	$("#startClock").click( function(){
-	   var counter = 10;
+	   var counter = 60;
 	   setInterval(function() {
 	     counter--;
 	      if (counter >= 0) {
@@ -86,37 +87,41 @@ $(document).ready(function(){
 
 // time left bar and target the bottom of jumbotron
 	$("#startClock").click( function(){
-		var timeleft = 10;
+		var timeleft = 60;
 		var timeLeftTimerBar = setInterval(function(){
-		  document.getElementById("progressBar").value = 10 - --timeleft;
+		  document.getElementById("progressBar").value = 60 - --timeleft;
 		  if(timeleft <= 0)
 		    clearInterval(timeLeftTimerBar);
 		},1000);
 	});
 
 
-// Need to compare user input to right answer array
-var wins = [i]
-var loss = [i]
-var userInput = ('input[name="radio"]:checked')
+// Need to compare user input to right answer array 
+// **************** NOT WORKING :-(
+	var wins = [i]
+	var loss = [i]
+	var userInput = ('input[name="radio"]:checked')
 
-	for (i = 0; i < userInput.length; i++) {
-		if ($('input[name="radio"]:checked').val() == answersCorrect){
-		wins++;
-		} else{
-		    loss++;
+		for (i = 0; i < userInput.length; i++) {
+			if ($('input[name="radio"]:checked').val() == answersCorrect){
+			wins++;
+
+			} else {
+			loss++;
+			}
+			return;
+			console.log('input[name="radio"]:checked');
 		}
-		return;
-		console.log('input[name="radio"]:checked');
-	}
 
-	$("input[type='radio']").click(function(){
-	    var radioValue = $("input[name='radio_1']:checked").val();
-	    	if(radioValue){
-	        	console.log("Your are a - " + radioValue);
-	    	}
-	});
+		$("input[type='radio']").click(function(){
+		    var radioValue = $("input[name='radio_1']:checked").val();
+		    	if(radioValue){
+		        	console.log("Your are a - " + radioValue);
+		    	}
+		});
 });
+
+
 
 // tried this:
 
